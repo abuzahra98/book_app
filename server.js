@@ -19,7 +19,7 @@ function rr(req, res) {
 }
 
 function homePage(req, res, next) {
-    res.render('pages/index', {'name': 'dawood'})
+    res.render('pages/index', {'name': '<3'})
 }
 function searchNew(req, res, next) {
     res.render('pages/searches/new')
