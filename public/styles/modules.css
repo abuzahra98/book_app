@@ -22,11 +22,12 @@ div.form-div {
   div.radio {
     height: 50px;
     width: 300px;
-    background-color: rgb(110, 110, 110);
+    background-color: #f6f6f6;
     margin-bottom: 10px;
-    color: rgb(224, 224, 224);
+    color:#161d6f;
     display: flex;
     flex-direction: row;
+    font-size: large;
   }
   
   .radio-label {
@@ -37,8 +38,8 @@ div.form-div {
     height: 50px;
     width: 300px;
     border: thin solid black;
-    color: white;
-    background-color: black;
+    color: #161d6f;
+    background-color: #c7ffd8;
     margin-bottom: 10px;
   }
   
@@ -47,7 +48,7 @@ div.form-div {
     display: grid;
     grid-template-columns: 1fr;
     margin: 10px 0;
-    background-color: rgb(96, 119, 119);
+    background-color: #98ded9;
     border-radius: 10px;
   }
   
@@ -62,6 +63,7 @@ div.form-div {
     align-items: center;
     margin: 0 auto;
     margin-top: 10px;
+    
   }
   
   .book-img {
@@ -71,7 +73,7 @@ div.form-div {
   }
   
   .book-title {
-    color: rgb(224, 224, 224);
+    color: #161d6f;
     font-size: 20px;
     text-align: center;
     margin-left: 5px;
@@ -79,7 +81,7 @@ div.form-div {
   }
   
   .book-author {
-    color: rgb(224, 224, 224);
+    color:#161d6f;
     font-size: 15px;
     text-align: center;
     margin-left: 5px;
@@ -91,7 +93,7 @@ div.form-div {
     margin-left: 10px;
     margin-right: 10px;
     padding: 5px;
-    background-color: rgb(224, 224, 224);
+    background-color: #f6f6f6;
     border-radius: 10px;
   }
   
@@ -107,4 +109,9 @@ div.form-div {
   .edit-label {
     margin: 5px 0 0 15px;
     color:rgb(224, 224, 224)
+  }
+
+  li:last-child
+  {
+    background-color: transparent;
   }
