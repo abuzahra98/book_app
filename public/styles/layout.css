@@ -1,5 +1,5 @@
 header {
-    background-color: rgb(24, 24, 24);
+    background-color: #c7ffd8;
     color: rgb(224, 224, 224);
     justify-content: center;
     align-items: center;
@@ -16,13 +16,15 @@ header {
   
   a {
     text-decoration: none;
+    color:#161d6f;
   }
   
   nav > h3 > a {
     display: inline;
     justify-content: space-between;
     margin: 5px 50px;
-    color: rgb(224, 224, 224);
+    color:#161d6f;
+
   }
   
   nav > h3 > a:hover {
@@ -30,18 +32,20 @@ header {
     justify-content: space-between;
     margin: 5px 50px;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color:#161d6f;
     background-color: rgb(96, 119, 119);
   }
   
   h1 {
     margin-top: 15px;
     font-size: 30px;
+    color: #161d6f;
+
   }
   
   h2 {
     margin: 10px 0;
-    color: rgb(24, 24, 24);
+    color: #161d6f;
     font-size: 30px;
     text-align: center;
   }
@@ -55,4 +59,9 @@ header {
 
   .ssaa{
     text-align: center;
+  }
+
+  .form-div{
+    background-color: #98ded9;
+
   }
