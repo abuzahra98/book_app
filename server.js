@@ -8,16 +8,24 @@ const server = express();
 const client = new pg.Client({ connectionString: process.env.DATABASE_URL,   ssl: { rejectUnauthorized: false } });
 const PORT = process.env.PORT || 5000;
 const superagent = require('superagent');
+const methodOverride = require('method-override');
 // const client = new pg.Client(process.env.DATABASE_URL);
 server.use(cors());
 server.set('view engine', 'ejs');
-server.use(express.static('./public'));
+ server.use(express.static('./public'));
+
+
+server.use(methodOverride('_method'));
 server.use(express.urlencoded({ extended: true }));
 server.get('/', homePage);
 server.get('/searches/new', searchNew);
 server.post('/searches', searchSpeseficBook);
 server.post('/SaveToDataBase', SaveToDataBase);
 server.get('/showOneBook/:id',showOneBook); 
+server.delete('/delete/:id',deleteBook);
+server.put('/update/:id',updateBook);
+
+
 function rr(req, res) {
     res.send('you server is working')
 }
@@ -99,8 +107,6 @@ let {img,title,description,isbn,auther}=req.body;
  
     }
 
-
-
 client.connect()
   .then(() => {
     server.listen(PORT, () =>
@@ -114,4 +120,21 @@ function Books(bookData) {
     this.description = bookData.volumeInfo.description ? bookData.volumeInfo.description : "This Book Without description";
     this.image_url = bookData.volumeInfo.imageLinks ? bookData.volumeInfo.imageLinks.smallThumbnail.replace(/HTTP:/i, 'https:') : "https://i.imgur.com/J5LVHEL.jpg";
    this.isbn = bookData.volumeInfo.industryIdentifiers?bookData.volumeInfo.industryIdentifiers[0].identifier:'no';
+}
+
+function deleteBook (req,res){
+  let SQL = `DELETE FROM book WHERE id=$1;`;
+  let value = [req.params.id];
+  client.query(SQL,value)
+  .then(res.redirect('/'))
+}
+
+function updateBook(req,res){
+  let {img,title,description,isbn,auther} = req.body;
+  let SQL = `UPDATE book SET img=$1,title=$2,description=$3,isbn=$4,auther=$5 WHERE id=$6;`;
+  let safeValues = [img,title,description,isbn,auther,req.params.id];
+  client.query(SQL,safeValues)
+  .then(()=>{
+    res.redirect(`/showOneBook/${req.params.id}`);
+  })
 }

@@ -6,6 +6,22 @@ div.form-div {
     justify-content: center;
   }
   
+  #updateForm
+  {
+    text-align: center;
+  }
+  .form
+  {
+    display: block;
+    width: 88%;
+    margin: 7px;
+    border: none;
+    
+    padding: 12px;
+  }
+  input{
+    border-radius: 7px;
+  }
   fieldset {
     margin: 0 auto;
     align-items: center;
@@ -111,7 +127,8 @@ div.form-div {
     color:rgb(224, 224, 224)
   }
 
-  li:last-child
+  li:last-child,li:nth-child(7),li:nth-child(6)
   {
     background-color: transparent;
   }
+ 
