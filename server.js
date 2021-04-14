@@ -9,7 +9,9 @@ const server = express();
 const PORT = process.env.PORT || 5000;
 const superagent = require('superagent');
 const methodOverride = require('method-override');
+
 const client = new pg.Client(process.env.DATABASE_URL);
+
 server.use(cors());
 server.set('view engine', 'ejs');
  server.use(express.static('./public'));
@@ -49,7 +51,7 @@ function homePage(req, res, next) {
 }
 function showOneBook(req, res, next) {
 
-    // console.log('dddddddddd',req.params);
+    
     let SQL = `SELECT * FROM book WHERE id=$1;`;
     let safeValue = [req.params.id]
     client.query(SQL,safeValue)

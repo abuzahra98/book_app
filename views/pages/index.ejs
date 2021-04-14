@@ -2,14 +2,17 @@
 
    <main>
     <div class="book-results">
-      <p>Book Collection<%=books.length%></p>
+
+      <p> <%=books.length%> Books Collection</p>
+
       <h2>Search Results</h2>
+      
       <%books.map(data=>{%>
         <div class="book-grid">
           <ul>
             <li> <img class="book-img" src="<%=data.img%>" /> </li>
             <li class="book-title"><%= data.title%></li>
-            <li class="book-author"><%= data.authors%></li>
+            <li class="book-author"><%= data.auther%></li>
            
               <li class="book-description"><%= data.description %></li>  
               <li class="book-description">
@@ -19,7 +22,7 @@
               <input type="hidden" name="title" value="<%= data.title%>">
               <input type="hidden" name="description" value="<%= data.description %>">
               <input type="hidden" name="isbn" value="<%=data.isbn%>">
-              <input type="hidden" name="auther" value="<%= data.authors%>">
+              <input type="hidden" name="auther" value="<%= data.auther%>">
               <input class="button" type="submit" value="View Detials">
                  
                 </form>
