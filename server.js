@@ -49,7 +49,7 @@ function homePage(req, res, next) {
 }
 function showOneBook(req, res, next) {
 
-    console.log(req.params);
+    console.log('dddddddddd',req.params);
     let SQL = `SELECT * FROM book WHERE id=$1;`;
     let safeValue = [req.params.id]
     client.query(SQL,safeValue)
@@ -58,7 +58,6 @@ function showOneBook(req, res, next) {
       res.render('pages/books/detail',{data:result.rows[0]})
       
     })
-      
    
    
 }

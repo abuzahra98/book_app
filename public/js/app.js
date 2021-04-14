@@ -5,3 +5,4 @@ $('#updateBtn').on('click',function(){
     $('#updateBtn').toggle();
     $('.hideit').toggle();
 })
+// console.log('ffffffffff',data.result.rows.length)
